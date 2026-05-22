@@ -7,6 +7,7 @@ const app = express();
 // with the help of use we can make midlware
 app.use((req, res, next ) =>{
     console.log("Came in first midlware" , req.url);
+    next();
 
 })
 
@@ -14,7 +15,7 @@ app.use((req,res,next) =>{
 console.log("came in second mildware" , req.url);
 })
 
-const server = Http.createServer(app);
+const server = http.createServer(app);
 
 const PORT = 3001;
 server.listen(PORT ,() =>{
